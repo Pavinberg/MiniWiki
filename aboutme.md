@@ -1,16 +1,12 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: 关于 MiniWiki
+subtitle: 
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+MiniWiki 希望能够聚合有趣、有用、有效的资源和信息，为 NJUer 提供高质量信息。
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+平台还在建设，希望大家多多参与。QQ 群号：978534944。
 
-What else do you need?
+![qq-group](../assets/img/qq-group.JPG)
 
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
