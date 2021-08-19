@@ -16,8 +16,11 @@ author: Pavinberg
 encoding: utf-8
 
 navbar-links:
+  分类:
+    - 实用工具: "tools"
+    - 编程: "programming"
   关于我们: "aboutme"
-  标签: "tags"
+  
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
   #   - Learn markdown: "https://www.markdowntutorial.com/"

@@ -26,12 +26,14 @@ p {
   margin: 1.875rem 0;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-weight: 200;
   line-height: 1.1;
 }
 h1 {
   font-size: 2.25rem;
+  font-weight: 300;
 }
 h2 {
   font-size: 1.875rem;
@@ -145,7 +147,7 @@ img {
   line-height: 1.5;
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-  font-size: 1.125rem;
+  font-size: 1.525rem;
 }
 
 .navbar-custom .navbar-brand-logo {
@@ -175,8 +177,10 @@ img {
 
 .navbar-custom .navbar-nav .nav-item {
   text-transform: uppercase;
-  font-size: 0.8125rem;
+  /*font-size: 0.8125rem;*/
+  font-size: 0.9125rem;
   letter-spacing: 0.0625rem;
+  text-align: center;
 }
 
 .navbar-custom .navbar-nav .nav-link {
@@ -642,7 +646,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   transition: opacity 1s linear;
 }
 .intro-header .page-heading {
-  text-align: center;
+	text-align: center;
 }
 .intro-header.big-img .page-heading,
 .intro-header.big-img .post-heading {
@@ -652,6 +656,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 .intro-header .page-heading h1 {
   margin-top: 0;
+  font-weight: 800;
   font-size: 3.125rem;
 }
 .intro-header .post-heading h1 {
