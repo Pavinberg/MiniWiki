@@ -5,8 +5,8 @@
     <title>MiniWiki</title>
     
     
-    <link></link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <link>/miniwiki</link>
+    <atom:link href="/miniwiki/feed.xml" rel="self" type="application/rss+xml" />
     
     
       <item>
@@ -16,8 +16,8 @@
           Python 作为最近非常热门的语言，网络上有着许多相关教程。这里分享一些网上不常见的、但在我个人使用过程中感受到十分有趣的好用用法：如何灵活运用函数对象这个概念。 前情提要 这篇博客解释了 Python 中的函数对象的相关概念。简单来说，Python 中函数也是一个对象，具备 id、类型和值。通俗来讲，就是函数和一个普通变量没有区别，所以你可以把一个函数作为参数传递、作为变量赋值等等。 &amp;gt;&amp;gt;&amp;gt; def func(): ... print(&quot;Hello, world.&quot;) ... &amp;gt;&amp;gt;&amp;gt; hello = func # 赋值 &amp;gt;&amp;gt;&amp;gt; hello() Hello, world. 如何写一个 switch 语句 C/C++、Java 等语言中有 switch 分支语句，作为 if 分支语句的补充。在更为现代的语言如 Rust、Scala 等语言中有 match 语句做分支匹配。但 Python 只有 if。例如，在有很多个分支时，通常 Python 会这样写： if foo == 1: run1() elif foo...
         </description>
         <pubDate>Thu, 19 Aug 2021 00:00:00 +0800</pubDate>
-        <link>/2021-08-19-python-trick-switch/</link>
-        <guid isPermaLink="true">/2021-08-19-python-trick-switch/</guid>
+        <link>/miniwiki/2021-08-19-python-trick-switch/</link>
+        <guid isPermaLink="true">/miniwiki/2021-08-19-python-trick-switch/</guid>
       </item>
     
       <item>
@@ -27,8 +27,8 @@
           使用 Linux 时想从许多文件中搜索关键词怎么办？Linux 本身有着 grep 命令可以完成这一任务。但 grep 较为古老，使用不便且效率较低，本文介绍一个更为现代的搜索工具：ripgrep。 ripgrep 是一个替代 grep （或者说 GNU grep）命令的搜索工具。其主要特点是命令的使用更为方便实用，以及搜索性能极高，在庞大的项目中有着出色的表现。并且默认可以忽略 .gitignore 文件中的内容，非常实用。 对网上的帖子的避雷： 官网是最好的。不知道为什么百度/谷歌到的第一条中文帖子居然教导大家先安装 Rust 再用 cargo 安装 ripgrep，愚蠢。虽然 ripgrep 是用 Rust 写的，但早已可以在多种系统下直接安装，不需要安装 Rust。为了新手友好以下简略介绍一下基础使用。 所需背景知识： 本文前半部分（安装、常用用法）会基础的 Linux 操作即可。 后半部分（深入细节）是原理分析，需要一点计算机体系结构、操作系统、算法等基础知识，为对原理感兴趣的同学抛砖引玉。 安装 详见 GitHub repo 安装说明。对于大部分系统可以直接使用包管理工具安装（例如 macOS 可用 Homebrew ）。除非你使用 Rust 否则不必使用 cargo 进行安装。 特别的，如果你使用 Debian 10 以下或...
         </description>
         <pubDate>Wed, 18 Aug 2021 00:00:00 +0800</pubDate>
-        <link>/2021-08-18-ripgrep/</link>
-        <guid isPermaLink="true">/2021-08-18-ripgrep/</guid>
+        <link>/miniwiki/2021-08-18-ripgrep/</link>
+        <guid isPermaLink="true">/miniwiki/2021-08-18-ripgrep/</guid>
       </item>
     
   </channel>

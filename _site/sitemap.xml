@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/2021-08-18-ripgrep/</loc>
+<loc>/miniwiki/2021-08-18-ripgrep/</loc>
 <lastmod>2021-08-18T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>/2021-08-19-python-trick-switch/</loc>
+<loc>/miniwiki/2021-08-19-python-trick-switch/</loc>
 <lastmod>2021-08-19T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>/aboutme/</loc>
+<loc>/miniwiki/aboutme/</loc>
 </url>
 <url>
-<loc>/</loc>
+<loc>/miniwiki/</loc>
 </url>
 <url>
-<loc>/programming/</loc>
+<loc>/miniwiki/programming/</loc>
 </url>
 <url>
-<loc>/tags/</loc>
+<loc>/miniwiki/tags/</loc>
 </url>
 <url>
-<loc>/tools/</loc>
+<loc>/miniwiki/tools/</loc>
 </url>
 </urlset>

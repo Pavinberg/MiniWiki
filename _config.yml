@@ -14,7 +14,7 @@ author: Pavinberg
 # --- List of links in the navigation bar --- #
 
 encoding: utf-8
-
+baseurl: "/miniwiki"
 navbar-links:
   分类:
     - 实用工具: "tools"
