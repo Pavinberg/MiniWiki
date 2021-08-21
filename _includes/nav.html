@@ -14,7 +14,7 @@
     <ul class="navbar-nav ml-auto">
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
-          <li class="nav-item dropdown" style="min-width:120px;">
+          <li class="nav-item dropdown" style="text-align:center;min-width:120px;font-size:0.9125rem;letter-spacing:0.0625rem;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link[0] }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               {%- for childlink in link[1] -%}
@@ -50,7 +50,7 @@
   {% if site.avatar and page.show-avatar != false %}
     <div class="avatar-container">
       <div class="avatar-img-border">
-        <a href="{{ site.baseurl | absolute_url }}">
+        <a href="{{ '' | absolute_url }}">
           <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
         </a>
       </div>
