@@ -10,6 +10,17 @@
     
     
       <item>
+        <title>终端神器推荐</title>
+        <description>
+          
+          终端的小黑窗可以说是与程序员打交道最多的程序之一了。如果你以为终端只能是一个如此“古老”的小黑窗可就错了，如今，各个平台下都有着更为现代、功能强大的终端替代软件。 Bash on Windows 原作者帖子在这里。 Windows 作为桌面操作系统界的霸主在编程方面有一些一言难尽的硬伤，对 Windows 用户而言开发环境的选择一般有：纯 Windows、Windows+ 虚拟机和 Windows+ 双系统。 纯 Windows 环境往往会增加折腾过程的难度，同时 Windows 老旧的命令行界面和 Windows 独自的命令集也让人不那么提得起劲。后两种虽然能够体验最纯粹的 GNU/Linux 环境，但虚拟机的启动等待和系统的切换等待让这一过程显得不那么顺滑。而一个即插即用的终端软件，能够顺滑高效地体验终端的魅力，在多年需求之下，终于有了 Microsoft 官方的支持： Windows Terminal Why Terminal ？ Microsoft 的 Windows Terminal是一个很现代的终端工具，集成了 powershell, cmd, WSL，可以同一个窗口中顺滑地使用不同的环境与工具。 How Terminal ？ Terminal 安装过程十分简单，只需要在电脑上打开 Microsoft Store，搜索 Terminal 并安装即可。安装完启动，便可以愉快地玩耍啦！ 当然为了能在 Windows 使用 Linux 命令强烈推荐跟着官方教程一步一步安装...
+        </description>
+        <pubDate>Sun, 22 Aug 2021 00:00:00 +0800</pubDate>
+        <link>/miniwiki/2021-08-22-terminal/</link>
+        <guid isPermaLink="true">/miniwiki/2021-08-22-terminal/</guid>
+      </item>
+    
+      <item>
         <title>新手篇：编辑器的选择</title>
         <description>
           编辑器 or IDE - 
