@@ -9,17 +9,13 @@
 
   
 
-  <title>关于 MiniWiki</title>
+  <title>TabNine：超智能代码补全</title>
 
   
   <meta name="author" content="Pavinberg">
   
 
-  <meta name="description" content="MiniWiki 希望能够聚合有趣、有用、有效的资源和信息，为 NJUer 提供高质量信息。
-
-平台还在建设，希望大家多多参与。QQ 群号：978534944。
-
-![qq-group](../assets/img/qq-group.JPG)">
+  <meta name="description" content="多平台多语言 AI 代码补全">
 
   
 
@@ -78,21 +74,19 @@
 
   
   <meta property="og:site_name" content="MiniWiki">
-  <meta property="og:title" content="关于 MiniWiki">
-  <meta property="og:description" content="MiniWiki 希望能够聚合有趣、有用、有效的资源和信息，为 NJUer 提供高质量信息。
-
-平台还在建设，希望大家多多参与。QQ 群号：978534944。
-
-![qq-group](../assets/img/qq-group.JPG)">
+  <meta property="og:title" content="TabNine：超智能代码补全">
+  <meta property="og:description" content="多平台多语言 AI 代码补全">
 
   
   <meta property="og:image" content="/miniwiki/assets/img/avatar-icon.png">
   
 
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="/miniwiki/aboutme/">
-  <link rel="canonical" href="/miniwiki/aboutme/">
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Pavinberg">
+  <meta property="og:article:published_time" content="2021-08-26T00:00:00+08:00">
+  <meta property="og:url" content="/miniwiki/2021-08-26-tabine/">
+  <link rel="canonical" href="/miniwiki/2021-08-26-tabine/">
   
 
   
@@ -101,12 +95,8 @@
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
-  <meta property="twitter:title" content="关于 MiniWiki">
-  <meta property="twitter:description" content="MiniWiki 希望能够聚合有趣、有用、有效的资源和信息，为 NJUer 提供高质量信息。
-
-平台还在建设，希望大家多多参与。QQ 群号：978534944。
-
-![qq-group](../assets/img/qq-group.JPG)">
+  <meta property="twitter:title" content="TabNine：超智能代码补全">
+  <meta property="twitter:description" content="多平台多语言 AI 代码补全">
 
   
   <meta name="twitter:image" content="/miniwiki/assets/img/avatar-icon.png">
@@ -278,10 +268,18 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="page-heading">
-          <h1>关于 MiniWiki</h1>
+        <div class="post-heading">
+          <h1>TabNine：超智能代码补全</h1>
+          
+            
+              <h2 class="post-subheading">多平台多语言 AI 代码补全</h2>
+            
           
 
+          
+            <span class="post-meta"> Pavinberg  2021-08-26</span>
+            
+            
           
         </div>
       </div>
@@ -294,22 +292,96 @@
 
 
 
-<div class=" container-md " role="main">
+<div class=" container-md ">
   <div class="row">
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
-      
-
-      <p>MiniWiki 希望能够聚合有趣、有用、有效的资源和信息，为 NJUer 提供高质量信息。</p>
-
-<p>平台还在建设，希望大家多多参与。QQ 群号：978534944。</p>
-
-<p><img src="../assets/img/qq-group.JPG" alt="qq-group" /></p>
-
-
 
       
 
       
+
+      <article role="main" class="blog-post">
+        <p><a href="https://www.tabnine.com">TabNine</a> 是一个使用 AI 做代码自动补全的插件，当你使用它时，会感叹：什么？它怎么会知道我要写这些？非常推荐大家试一试。</p>
+
+<h2 id="简介">简介</h2>
+
+<p>我刚开始使用时，写了第一句 Python 代码，就给出了如此的补全建议：</p>
+
+<p><img src="/miniwiki/assets/img/tabnine/import1.png" alt="import1" /></p>
+
+<p>当我按下回车确认选择了这个选项后，按下了逗号，它又给了我这样的提示：</p>
+
+<p><img src="/miniwiki/assets/img/tabnine/import2.png" alt="import2" /></p>
+
+<p>这正是我要的代码。</p>
+
+<p>这样的例子比比皆是，一顿按回车就把代码写好了😝。</p>
+
+<p>此外，注释也一样可以补全。在我上一行写了一行注释后，下一行便自动猜出了我想要对照的内容（当然前面的代码就是对照的）。</p>
+
+<p><img src="/miniwiki/assets/img/tabnine/comment.jpg" alt="comment" /></p>
+
+<p>总的来说，它会根据你的代码习惯，在后台进行学习，用的越久，越熟知你的代码使用习惯。</p>
+
+<h2 id="使用条件">使用条件</h2>
+
+<p>TabNine 支持 30+ 种语言、15 个 IDE（编辑器），基本上你平日所用的语言 C/C++、Java、Python、Javascript、Rust、Matlab，以及所用的 IDE： VSCode、Emacs、Vim、PyCharm、Intellij IDEA、CLion、Jupyter Notebook、Eclipse 都可以使用。详见<a href="https://www.tabnine.com/install">官网介绍</a>。</p>
+
+<h2 id="设置">设置</h2>
+
+<p>在启动了 TabNine 插件的编辑器中输入 “tabnine::config” 即可打开 TabNine 的设置。对于使用笔记本的同学，建议勾选偏下的位置的一项 “Disable Deep Completions Local when on battery power”，这样在使用电池的时候不进行深度学习，节约电能。</p>
+
+<p>此外，“Optimize Your AI for Speed or Strength” 可以选择你更偏向选择更节约资源的方式还是更准确的方式。对于内存小、性能有限的计算机就最好选择 “Speed”。</p>
+
+<h2 id="学生优惠">学生优惠</h2>
+
+<p>TabNine 有基础和 Pro 两个级别，基础功能免费（但貌似近日开始限制使用次数了？），Pro 正常需要付费。基础功能没有云端存储功能，并且最多只有两个提示（但其实足够了）。</p>
+
+<p>但现在只需要使用学生邮箱，即可免费使用，详见<a href="https://www.tabnine.com/students">官网</a>。</p>
+
+<p>更多介绍可以看这篇文章：<a href="https://zhuanlan.zhihu.com/p/73811872">杀手级AI补代码工具问世，支持23种语言及5种主流编辑器，程序员沸腾了</a></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/miniwiki/tags#实用工具">实用工具</a>
+          
+            <a href="/miniwiki/tags#编程">编程</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/miniwiki/2021-08-22-terminal/" data-toggle="tooltip" data-placement="top" title="终端神器推荐">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+
 
     </div>
   </div>
