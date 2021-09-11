@@ -9,13 +9,13 @@
 
   
 
-  <title>TabNine：超智能代码补全</title>
+  <title>Ansible：服务器集群管理工具</title>
 
   
   <meta name="author" content="Pavinberg">
   
 
-  <meta name="description" content="多平台多语言 AI 代码补全">
+  <meta name="description" content="环境配置、流程管理、自动部署测试">
 
   
 
@@ -74,8 +74,8 @@
 
   
   <meta property="og:site_name" content="MiniWiki">
-  <meta property="og:title" content="TabNine：超智能代码补全">
-  <meta property="og:description" content="多平台多语言 AI 代码补全">
+  <meta property="og:title" content="Ansible：服务器集群管理工具">
+  <meta property="og:description" content="环境配置、流程管理、自动部署测试">
 
   
   <meta property="og:image" content="/miniwiki/assets/img/avatar-icon.png">
@@ -84,9 +84,9 @@
   
   <meta property="og:type" content="article">
   <meta property="og:article:author" content="Pavinberg">
-  <meta property="og:article:published_time" content="2021-08-26T00:00:00+08:00">
-  <meta property="og:url" content="/miniwiki/2021-08-26-tabine/">
-  <link rel="canonical" href="/miniwiki/2021-08-26-tabine/">
+  <meta property="og:article:published_time" content="2021-09-11T00:00:00+08:00">
+  <meta property="og:url" content="/miniwiki/2021-09-11-ansible/">
+  <link rel="canonical" href="/miniwiki/2021-09-11-ansible/">
   
 
   
@@ -95,8 +95,8 @@
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
-  <meta property="twitter:title" content="TabNine：超智能代码补全">
-  <meta property="twitter:description" content="多平台多语言 AI 代码补全">
+  <meta property="twitter:title" content="Ansible：服务器集群管理工具">
+  <meta property="twitter:description" content="环境配置、流程管理、自动部署测试">
 
   
   <meta name="twitter:image" content="/miniwiki/assets/img/avatar-icon.png">
@@ -283,15 +283,15 @@
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="post-heading">
-          <h1>TabNine：超智能代码补全</h1>
+          <h1>Ansible：服务器集群管理工具</h1>
           
             
-              <h2 class="post-subheading">多平台多语言 AI 代码补全</h2>
+              <h2 class="post-subheading">环境配置、流程管理、自动部署测试</h2>
             
           
 
           
-            <span class="post-meta"> Pavinberg  2021-08-26</span>
+            <span class="post-meta"> Pavinberg  2021-09-11</span>
             
             
           
@@ -315,45 +315,87 @@
       
 
       <article role="main" class="blog-post">
-        <p><a href="https://www.tabnine.com">TabNine</a> 是一个使用 AI 做代码自动补全的插件，当你使用它时，会感叹：什么？它怎么会知道我要写这些？非常推荐大家试一试。</p>
+        <p>我们做实验经常要使用远程服务器，而运行一些固定的任务流程，例如环境配置、文件同步、运行实验等等是常见的需求。手动编写 Shell 脚本较为繁琐，尤其是需要管理多台机器时格外麻烦。使用 Ansible 即可通过编写 YAML 格式配置文件，一句命令即可在一组服务器上同时进行操作，高效实用。</p>
 
-<h2 id="简介">简介</h2>
+<h2 id="安装">安装</h2>
 
-<p>我刚开始使用时，写了第一句 Python 代码，就给出了如此的补全建议：</p>
+<p><a href="https://docs.ansible.com/ansible_community.html">Ansible Commuity</a> 是开源免费的版本。Ansible 只需要在一台控制机器上安装，它会使用 SSH 和 Python 来进行服务器的管理。因此你只需要保证每台被管理的机器可以正常用 SSH 登陆（最好是免密登陆），且装有 Python 3.5+（Python 2.7 也可以，但并不推荐）。</p>
 
-<p><img src="/miniwiki/assets/img/tabnine/import1.png" alt="import1" /></p>
+<p>在控制机器上安装 Ansible 非常简单，Linux 上通常可以用包管理工具进行安装。此外，还可以使用 <code class="language-plaintext highlighter-rouge">pip</code> 进行安装。macOS 和 Win 推荐用 <code class="language-plaintext highlighter-rouge">pip</code> 安装。</p>
 
-<p>当我按下回车确认选择了这个选项后，按下了逗号，它又给了我这样的提示：</p>
+<h2 id="一些功能简介">一些功能简介</h2>
 
-<p><img src="/miniwiki/assets/img/tabnine/import2.png" alt="import2" /></p>
+<p>Ansible 的核心功能在于 Playbook，Playbook 就是用编写好的配置文件管理服务器组。与之相对的有 Ad-hoc 等，是指对一组服务器执行一句即时命令，显然通过配置文件管理是我们最想要的功能，所以我们重点关注 Playbook。</p>
 
-<p>这正是我要的代码。</p>
+<p>使用 Ansible Playbook 主要关注两个文件，一个是 Inventory 文件，一个是 YAML 格式的配置文件。所谓 Inventory 文件，就是服务器的列表。我们把我们想管理的机器写到这个文件里，可以进行分组管理，可以为不同的机器保存一些不同的变量等等。而在 YAML 格式的配置文件中，编写我们想要的任务逻辑。</p>
 
-<p>这样的例子比比皆是，一顿按回车就把代码写好了😝。</p>
+<h3 id="执行任务">执行任务</h3>
 
-<p>此外，注释也一样可以补全。在我上一行写了一行注释后，下一行便自动猜出了我想要对照的内容（当然前面的代码就是对照的）。</p>
+<p>YAML 是一种很简单的文件格式，通过键值对和列表的嵌套表达信息。如果读者知道 json 格式，那么 YAML 与 json 是很相似的。下面是一个简单的例子：</p>
 
-<p><img src="/miniwiki/assets/img/tabnine/comment.jpg" alt="comment" /></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">hosts</span><span class="pi">:</span> <span class="s">webservers</span>
+  <span class="na">vars</span><span class="pi">:</span>
+    <span class="na">http_port</span><span class="pi">:</span> <span class="m">80</span>
+    <span class="na">max_clients</span><span class="pi">:</span> <span class="m">200</span>
+  <span class="na">remote_user</span><span class="pi">:</span> <span class="s">root</span>
+  <span class="na">tasks</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ensure apache is at the latest version</span>
+    <span class="na">yum</span><span class="pi">:</span> <span class="s">pkg=httpd state=latest</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">write the apache config file</span>
+    <span class="na">template</span><span class="pi">:</span> <span class="s">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
+    <span class="na">notify</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">restart apache</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ensure apache is running</span>
+    <span class="na">service</span><span class="pi">:</span> <span class="s">name=httpd state=started</span>
+  <span class="na">handlers</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">restart apache</span>
+      <span class="na">service</span><span class="pi">:</span> <span class="s">name=httpd state=restarted</span>
+</code></pre></div></div>
 
-<p>总的来说，它会根据你的代码习惯，在后台进行学习，用的越久，越熟知你的代码使用习惯。</p>
+<p>第一行中，我们指定了我们要对哪些服务器进行管理，Ansible 会自动去 Inventory 文件中寻找相应的服务器组。这里就是我们定义好的一个叫 webservers 的服务器组，我们想要对它们进行操作。</p>
 
-<h2 id="使用条件">使用条件</h2>
+<p>随后 <code class="language-plaintext highlighter-rouge">vars</code> 指定了一些变量。<code class="language-plaintext highlighter-rouge">remote_user</code> 指定了服务器上的登陆用户。</p>
 
-<p>TabNine 支持 30+ 种语言、15 个 IDE（编辑器），基本上你平日所用的语言 C/C++、Java、Python、Javascript、Rust、Matlab，以及所用的 IDE： VSCode、Emacs、Vim、PyCharm、Intellij IDEA、CLion、Jupyter Notebook、Eclipse 都可以使用。详见<a href="https://www.tabnine.com/install">官网介绍</a>。</p>
+<p><code class="language-plaintext highlighter-rouge">tasks</code> 是本次要执行的任务列表，可以看到这里有三个任务。每个任务都有一个名字和任务内容，例如第一个任务是用 <code class="language-plaintext highlighter-rouge">yum</code> 安装 <code class="language-plaintext highlighter-rouge">httpd</code> 这个包，确保是最新的版本。第二个任务是更新配置文件，并且更新后通过 <code class="language-plaintext highlighter-rouge">notify</code> 调用另一个在 <code class="language-plaintext highlighter-rouge">handlers</code> 中定义的任务，由此相当于触发一连串的更新。同时可以由此进行任务依赖关系的设定</p>
 
-<h2 id="设置">设置</h2>
+<p>如果我们将文件保存为 <code class="language-plaintext highlighter-rouge">playbook.yml</code>，并将 Inventory 文件保存为 <code class="language-plaintext highlighter-rouge">hosts.ini</code> （默认是 INI 格式的，也支持 YAML 格式），那么执行以下命令即可执行这些任务：</p>
 
-<p>在启动了 TabNine 插件的编辑器中输入 “tabnine::config” 即可打开 TabNine 的设置。对于使用笔记本的同学，建议勾选偏下的位置的一项 “Disable Deep Completions Local when on battery power”，这样在使用电池的时候不进行深度学习，节约电能。</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ansible-playbook <span class="nt">-i</span> hosts.ini playbook.yml
+</code></pre></div></div>
 
-<p>此外，“Optimize Your AI for Speed or Strength” 可以选择你更偏向选择更节约资源的方式还是更准确的方式。对于内存小、性能有限的计算机就最好选择 “Speed”。</p>
+<h3 id="同步文件">同步文件</h3>
 
-<h2 id="学生优惠">学生优惠</h2>
+<p>编写这样的任务可以将文件进行分发：</p>
 
-<p>TabNine 有基础和 Pro 两个级别，基础功能免费（但貌似近日开始限制使用次数了？），Pro 正常需要付费。基础功能没有云端存储功能，并且最多只有两个提示（但其实足够了）。</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">copy</span><span class="pi">:</span>
+    <span class="na">src</span><span class="pi">:</span> <span class="s">/srv/myfiles/foo.conf</span>
+    <span class="na">dest</span><span class="pi">:</span> <span class="s">/etc/foo.conf</span>
+    <span class="na">owner</span><span class="pi">:</span> <span class="s">foo</span>
+    <span class="na">group</span><span class="pi">:</span> <span class="s">foo</span>
+    <span class="na">mode</span><span class="pi">:</span> <span class="s">u=rw,g=r,o=r</span>
+</code></pre></div></div>
 
-<p>但现在只需要使用学生邮箱，即可免费使用，详见<a href="https://www.tabnine.com/students">官网</a>。</p>
+<p>将本地的 <code class="language-plaintext highlighter-rouge">/srv/myfiles/foo.conf</code> 文件复制到所有服务器的 <code class="language-plaintext highlighter-rouge">/etc/foo.conf</code> 上。</p>
 
-<p>更多介绍可以看这篇文章：<a href="https://zhuanlan.zhihu.com/p/73811872">杀手级AI补代码工具问世，支持23种语言及5种主流编辑器，程序员沸腾了</a></p>
+<h3 id="变量替换">变量替换</h3>
+
+<p>每台服务器上的配置经常可能只有一些细微的区别，对此，Ansible 集成了 Jinja2，一个模板引擎，我们把配置文件写成模板，其中蕴含一些变量，之后为每台机器设置不同的变量值，这样 Jinja2 会自动将变量替换为相应的值，同时还能支持 <code class="language-plaintext highlighter-rouge">if</code>、<code class="language-plaintext highlighter-rouge">for loop</code> 等控制流操作。</p>
+
+<p>例如一个简单的例子，如果某个路径每台机器都不同，你可以把这个路径字符串赋值给一个变量 <code class="language-plaintext highlighter-rouge">foo_path</code>，然后在 Playbook 中写：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>template: src=foo.cfg.j2 dest={{ foo_path }}/foo.cfg
+</code></pre></div></div>
+
+<p>两个花括号之间的 <code class="language-plaintext highlighter-rouge">foo_path</code> 就会被进行变量替换，你在不同的机器上设置不同的值，最终就会得到不同的路径。</p>
+
+<h2 id="相关资源">相关资源</h2>
+
+<p>本文只是一个抛砖引玉，Ansible 功能非常丰富强大，读者应该查阅相关手册，一步步递进学习就好，需要什么就现用现查。</p>
+
+<p><a href="https://docs.ansible.com/ansible/latest/index.html">Ansible 英文文档</a>：官方，写的很好。</p>
+
+<p><a href="https://ansible-tran.readthedocs.io/en/latest/index.html">Ansible 中文权威指南</a>：官方文档的中文翻译，但个人觉得翻译有些生硬，如果英语水平可以还是建议看英文。</p>
+
 
       </article>
 
@@ -362,8 +404,6 @@
           <span>Tags:</span>
           
             <a href="/miniwiki/tags#实用工具">实用工具</a>
-          
-            <a href="/miniwiki/tags#编程">编程</a>
           
         </div>
       
@@ -382,13 +422,9 @@
       <ul class="pagination blog-pager">
         
         <li class="page-item previous">
-          <a class="page-link" href="/miniwiki/2021-08-22-terminal/" data-toggle="tooltip" data-placement="top" title="终端神器推荐">&larr; Previous Post</a>
+          <a class="page-link" href="/miniwiki/2021-08-26-tabine/" data-toggle="tooltip" data-placement="top" title="TabNine：超智能代码补全">&larr; Previous Post</a>
         </li>
         
-        
-        <li class="page-item next">
-          <a class="page-link" href="/miniwiki/2021-09-11-ansible/" data-toggle="tooltip" data-placement="top" title="Ansible：服务器集群管理工具">Next Post &rarr;</a>
-        </li>
         
       </ul>
       

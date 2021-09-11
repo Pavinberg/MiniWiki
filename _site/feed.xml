@@ -10,6 +10,17 @@
     
     
       <item>
+        <title>Ansible：服务器集群管理工具</title>
+        <description>
+          环境配置、流程管理、自动部署测试 - 
+          我们做实验经常要使用远程服务器，而运行一些固定的任务流程，例如环境配置、文件同步、运行实验等等是常见的需求。手动编写 Shell 脚本较为繁琐，尤其是需要管理多台机器时格外麻烦。使用 Ansible 即可通过编写 YAML 格式配置文件，一句命令即可在一组服务器上同时进行操作，高效实用。 安装 Ansible Commuity 是开源免费的版本。Ansible 只需要在一台控制机器上安装，它会使用 SSH 和 Python 来进行服务器的管理。因此你只需要保证每台被管理的机器可以正常用 SSH 登陆（最好是免密登陆），且装有 Python 3.5+（Python 2.7 也可以，但并不推荐）。 在控制机器上安装 Ansible 非常简单，Linux 上通常可以用包管理工具进行安装。此外，还可以使用 pip 进行安装。macOS 和 Win 推荐用 pip 安装。 一些功能简介 Ansible 的核心功能在于 Playbook，Playbook 就是用编写好的配置文件管理服务器组。与之相对的有 Ad-hoc 等，是指对一组服务器执行一句即时命令，显然通过配置文件管理是我们最想要的功能，所以我们重点关注 Playbook。 使用 Ansible Playbook 主要关注两个文件，一个是 Inventory 文件，一个是 YAML 格式的配置文件。所谓 Inventory...
+        </description>
+        <pubDate>Sat, 11 Sep 2021 00:00:00 +0800</pubDate>
+        <link>/miniwiki/2021-09-11-ansible/</link>
+        <guid isPermaLink="true">/miniwiki/2021-09-11-ansible/</guid>
+      </item>
+    
+      <item>
         <title>TabNine：超智能代码补全</title>
         <description>
           多平台多语言 AI 代码补全 - 
